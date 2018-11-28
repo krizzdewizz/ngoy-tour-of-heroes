@@ -1,3 +1,12 @@
 app-hero-detail button {
 	margin-top: 2rem;
 }
+
+app-hero-detail .error {
+	color: red;
+}
+
+app-hero-detail .info {
+	color: blue;
+}
+

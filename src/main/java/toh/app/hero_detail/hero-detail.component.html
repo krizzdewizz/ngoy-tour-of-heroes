@@ -1,13 +1,26 @@
-<div *ngIf="hero != null">
+<div *ngIf="hero != null; else notFound">
 
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
-  <div>
-    <label>name:
-      <input [value]="hero.name" placeholder="name" readonly>
-    </label>
-  </div>
+    <span class="info" *ngIf="saved">Hero saved.</span>
+    <span class="error" *ngIf="error != null">{{error}}</span>
+
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div>
+        <span>id: </span>{{hero.id}}
+    </div>
+    <form method="POST" action="savehero">
+        <div>
+            <label>name:
+                <input type="text" name="name" autofocus [value]="hero.name" placeholder="name">
+                <input type="hidden" name="id" [value]="hero.id">
+            </label>
+        </div>
+        <button type="submit">save</button>
+    </form>
 </div>
+
+<ng-template #notFound>
+    <p class="error">Hero could not be found.</p>
+</ng-template>
 
 <!-- just a tiny little bit of JavaScript -->
 <button onclick="history.back()">go back</button>
