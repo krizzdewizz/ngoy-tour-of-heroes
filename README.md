@@ -2,7 +2,7 @@
 
 [ngoy](https://github.com/krizzdewizz/ngoy) is a template engine for the JVM, based on the Angular+ component architecture.
 
-This repo contains the complete "Tour of Heroes" tutorial using ngoy.
+As a proof of concept, the complete "Tour of Heroes" tutorial was rewritten using ngoy.
 
 ```
 git clone https://github.com/krizzdewizz/ngoy-tour-of-heroes

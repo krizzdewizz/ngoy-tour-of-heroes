@@ -58,7 +58,7 @@ public class Main implements InitializingBean {
 
 	@GetMapping()
 	public void home(HttpServletResponse response) throws Exception {
-		if (activeProfile.indexOf("dev") > -1 && "".isEmpty()) {
+		if (activeProfile.indexOf("dev") > -1) {
 			createApp();
 		}
 		ngoy.render(response.getOutputStream());

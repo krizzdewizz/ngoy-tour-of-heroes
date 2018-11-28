@@ -12,7 +12,7 @@
  
 <h2>My Heroes</h2>
 <div class="heroes">
-	<button *ngFor="let hero of heroes; index as heroIndex" [class.selected]="hero == selectedHero" (click)="selecthero">
+	<button *ngFor="let hero of heroes; index as heroIndex" [class.selected]="hero == selectedHero" (click)="/selecthero">
 		<input type="hidden" name="heroIndex" [value]="heroIndex">
 		<span class="badge">{{hero.id}}</span> {{hero.name}}
 	</button>

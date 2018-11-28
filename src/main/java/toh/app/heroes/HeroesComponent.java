@@ -26,7 +26,8 @@ public class HeroesComponent implements OnInit {
 	@Inject
 	public MessageService messageService;
 
-	@PostMapping("selecthero")
+	// original toh stage 1: select hero when clicked
+	@PostMapping("/selecthero")
 	public String selectHero(@RequestParam("heroIndex") int heroIndex) {
 		selectedHero = heroes.get(heroIndex);
 		return "redirect:.";
