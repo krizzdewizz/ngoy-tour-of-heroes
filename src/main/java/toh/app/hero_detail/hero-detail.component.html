@@ -1,0 +1,13 @@
+<div *ngIf="hero != null">
+
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label>name:
+      <input [value]="hero.name" placeholder="name" readonly>
+    </label>
+  </div>
+</div>
+
+<!-- just a tiny little bit of JavaScript -->
+<button onclick="history.back()">go back</button>
