@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ngoy.core.Component;
 import ngoy.core.Inject;
 import ngoy.core.OnInit;
+import toh.app.AppState;
 import toh.app.Hero;
 import toh.app.services.HeroService;
 import toh.app.services.MessageService;
@@ -18,26 +19,28 @@ import toh.app.services.MessageService;
 public class HeroesComponent implements OnInit {
 	public List<Hero> heroes;
 
-	public Hero selectedHero;
-
 	@Inject
 	public HeroService heroService;
 
 	@Inject
+	public AppState appState;
+
+	@Inject
 	public MessageService messageService;
+
+	public Hero selectedHero;
 
 	// original toh stage 1: select hero when clicked
 	@PostMapping("/selecthero")
-	public String selectHero(@RequestParam("heroIndex") int heroIndex) {
-		selectedHero = heroes.get(heroIndex);
+	public String selectHero(@RequestParam("heroId") long heroId) {
+		appState.selectedHeroId = heroId;
 		return "redirect:.";
 	}
 
 	@Override
 	public void ngOnInit() {
 		heroes = heroService.getHeroes();
-		if (selectedHero == null) {
-			selectedHero = heroes.get(0);
-		}
+		selectedHero = appState.selectedHeroId != null ? heroService.findById(appState.selectedHeroId)
+				.orElse(null) : null;
 	}
 }

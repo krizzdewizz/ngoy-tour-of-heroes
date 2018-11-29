@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
-	implementation("com.github.krizzdewizz:ngoy:$ngoyVersion")
+	//implementation("com.github.krizzdewizz:ngoy:$ngoyVersion")
 }
 
 // include component html/css files that reside next to the class

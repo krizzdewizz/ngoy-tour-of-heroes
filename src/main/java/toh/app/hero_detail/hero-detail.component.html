@@ -10,11 +10,11 @@
     <form method="POST" action="savehero">
         <div>
             <label>name:
-                <input type="text" name="name" autofocus [value]="hero.name" placeholder="name">
+                <input type="text" [readonly]="readonly ? 'readonly' : null" name="name" autofocus [value]="hero.name" placeholder="name">
                 <input type="hidden" name="id" [value]="hero.id">
             </label>
         </div>
-        <button type="submit">save</button>
+        <button *ngIf="!readonly" type="submit">save</button>
     </form>
 </div>
 

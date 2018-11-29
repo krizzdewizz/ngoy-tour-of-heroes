@@ -11,16 +11,6 @@
 	width: 15em;
 }
 
-.heroes button {
-	width: 100%;
-	text-align: left;
-	border: none;
-	margin-bottom: 4px;
-	padding: 0;
-	cursor: pointer;
-	height: 2rem;
-}
-
 .heroes li {
 	cursor: pointer;
 	position: relative;
@@ -29,6 +19,7 @@
 	margin: .5em;
 	height: 1.6em;
 	border-radius: 4px;
+	display: flex;
 }
 
 .heroes li a {
@@ -62,4 +53,11 @@ display: inline-block;
     width: 2rem;
     padding-left: 5px;
     padding-top: 2px;
+}
+
+.heroes .select-hero {
+	height: 100%;
+	width: 25px;
+	font-weight: bold;
+	cursor: pointer;
 }

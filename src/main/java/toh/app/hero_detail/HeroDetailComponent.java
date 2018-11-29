@@ -9,17 +9,34 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import ngoy.core.Component;
 import ngoy.core.Inject;
+import ngoy.core.Input;
 import ngoy.core.OnDestroy;
 import ngoy.core.OnInit;
 import ngoy.router.Location;
 import ngoy.router.RouteParams;
+import toh.app.AppState;
 import toh.app.Hero;
 import toh.app.services.HeroService;
 
 @Component(selector = "app-hero-detail", templateUrl = "hero-detail.component.html", styleUrls = { "hero-detail.component.css" })
 @Controller
 public class HeroDetailComponent implements OnInit, OnDestroy {
+	@Input
 	public Hero hero;
+
+	private boolean readonly;
+
+	public boolean isReadonly() {
+		return readonly;
+	}
+
+	@Input
+	public void setReadonly(boolean readonly) {
+		this.readonly = readonly;
+	}
+
+	@Inject
+	public AppState appState;
 
 	@Inject
 	public RouteParams routeParams;
@@ -37,9 +54,14 @@ public class HeroDetailComponent implements OnInit, OnDestroy {
 
 	@Override
 	public void ngOnInit() {
-		hero = heroService.findById(Long.parseLong(routeParams.get("id")))
-				.orElse(null);
 		redirectUrl = location.getPath();
+
+		if (hero == null) {
+			long heroId = Long.parseLong(routeParams.get("id"));
+			hero = heroService.findById(heroId)
+					.orElse(null);
+			appState.selectedHeroId = heroId;
+		}
 	}
 
 	@Override
@@ -64,4 +86,5 @@ public class HeroDetailComponent implements OnInit, OnDestroy {
 		}
 		return format("redirect:%s", redirectUrl);
 	}
+
 }
