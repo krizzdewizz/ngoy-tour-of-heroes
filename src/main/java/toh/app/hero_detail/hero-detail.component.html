@@ -1,8 +1,5 @@
 <div *ngIf="hero != null; else notFound">
 
-    <span class="info" *ngIf="saved">Hero saved.</span>
-    <span class="error" *ngIf="error != null">{{error}}</span>
-
     <h2>{{hero.name | uppercase}} Details</h2>
     <div>
         <span>id: </span>{{hero.id}}

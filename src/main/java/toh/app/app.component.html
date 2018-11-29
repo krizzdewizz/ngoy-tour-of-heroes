@@ -10,6 +10,10 @@
 
 <body>
 	<h1>{{title}}</h1>
+	
+	<span class="info" *ngIf="saved">Hero saved.</span>
+    <span class="error" *ngIf="error != null">{{error}}</span>
+    
 	<nav>
 	 	<a [class.active]="router.isActive(route)" *ngFor="let route of mainRoutes" [routerLink]="'/' + route.path">{{route.path | capitalize }}</a>
 	</nav>

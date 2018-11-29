@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ngoy.Ngoy;
-import ngoy.core.Provider;
 import ngoy.router.Location;
 import ngoy.router.RouterConfig;
 import ngoy.router.RouterModule;
@@ -56,13 +55,13 @@ public class Main implements InitializingBean {
 				.injectors(beanInjector)
 				.modules(RouterModule.forRoot(routerConfig))
 				.modules(Main.class.getPackage())
-				.providers(Provider.useValue(AppState.class, appState))
+				.providers(useValue(AppState.class, appState))
 				.build();
 	}
 
 	@GetMapping()
 	public void home(HttpServletResponse response) throws Exception {
-		if (activeProfile.contains("dev") && "a".isEmpty()) {
+		if (activeProfile.contains("dev") && "".isEmpty()) {
 			createApp();
 		}
 		ngoy.render(response.getOutputStream());

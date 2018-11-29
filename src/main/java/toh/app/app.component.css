@@ -31,3 +31,12 @@ nav a.active {
 	color: white;
 	background-color: darkkhaki;
 }
+
+.error {
+	color: red;
+}
+
+.info {
+	color: blue;
+}
+
