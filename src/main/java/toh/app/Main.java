@@ -61,7 +61,7 @@ public class Main implements InitializingBean {
 
 	@GetMapping()
 	public void home(HttpServletResponse response) throws Exception {
-		if (activeProfile.contains("dev") && "".isEmpty()) {
+		if (activeProfile.contains("dev")) {
 			createApp();
 		}
 		ngoy.render(response.getOutputStream());

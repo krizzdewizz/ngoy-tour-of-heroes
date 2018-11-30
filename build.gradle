@@ -17,7 +17,7 @@ apply plugin:'application'
 
 mainClassName = "toh.TohWebApplication"
 
-def ngoyVersion = 'beta2';
+def ngoyVersion = 'beta4';
 
 group = 'ngoy'
 version = '0.0.1'
@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
-	//implementation("com.github.krizzdewizz:ngoy:$ngoyVersion")
+	implementation("com.github.krizzdewizz:ngoy:$ngoyVersion")
 }
 
 // include component html/css files that reside next to the class

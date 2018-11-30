@@ -61,7 +61,7 @@ public class AppComponent implements OnInit, OnDestroy {
 		error = null;
 	}
 
-	@PostMapping("/detail/savehero")
+	@PostMapping("/savehero")
 	public String saveHero(Hero heroRequest) {
 		String name = heroRequest.name;
 		if (name == null || name.isEmpty()) {

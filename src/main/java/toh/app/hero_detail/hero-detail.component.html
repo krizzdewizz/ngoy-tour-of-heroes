@@ -4,7 +4,7 @@
     <div>
         <span>id: </span>{{hero.id}}
     </div>
-    <form method="POST" action="savehero">
+    <form method="POST" action="/savehero">
         <div>
             <label>name:
                 <input type="text" [readonly]="readonly ? 'readonly' : null" name="name" autofocus [value]="hero.name" placeholder="name">
