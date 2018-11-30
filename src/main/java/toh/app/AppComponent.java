@@ -86,7 +86,7 @@ public class AppComponent implements OnInit, OnDestroy {
 	}
 
 	@PostMapping("/clearmessages")
-	public String clear() {
+	public String clearMessages() {
 		messageService.clear();
 		return redirectUrl;
 	}

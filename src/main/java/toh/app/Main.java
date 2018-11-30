@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,9 +22,6 @@ import toh.app.heroes.HeroesComponent;
 @Controller
 @RequestMapping("/**")
 public class Main implements InitializingBean {
-
-	@Value("${spring.profiles.active:unknown}")
-	private String activeProfile;
 
 	private Ngoy<AppComponent> ngoy;
 
@@ -61,9 +57,6 @@ public class Main implements InitializingBean {
 
 	@GetMapping()
 	public void home(HttpServletResponse response) throws Exception {
-		if (activeProfile.contains("dev")) {
-			createApp();
-		}
 		ngoy.render(response.getOutputStream());
 	}
 }

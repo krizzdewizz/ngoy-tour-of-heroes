@@ -1,7 +1,6 @@
 <ul class="heroes">
 	<li *ngFor="let hero of heroes">
-		<button title="Select" class="select-hero" (click)="/selecthero">{{ hero == selectedHero ? 'X' : '' }}
-			<input type="hidden" name="heroId" [value]="hero.id">
+		<button title="Select" class="select-hero" [(click)]="{'selectHero', {heroId: hero.id }}">{{ hero == selectedHero ? 'X' : '' }}
 		</button>
 		<a [routerLink]="'detail/' + hero.id"> <span class="badge">{{hero.id}}</span> {{hero.name}}
 	</a>
