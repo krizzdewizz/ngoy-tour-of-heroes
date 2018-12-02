@@ -57,7 +57,7 @@ public class Main implements InitializingBean {
 
 	@GetMapping()
 	public void home(HttpServletResponse response) throws Exception {
-		// re-recreate while developing to have changes picked-up
+		// re-create while developing to have changes picked-up
 //		createApp();
 		ngoy.render(response.getOutputStream());
 	}
