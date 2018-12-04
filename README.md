@@ -1,6 +1,6 @@
 # ngoy-tour-of-heroes
 
-[ngoy](https://github.com/krizzdewizz/ngoy) is a template engine for the JVM, based on the Angular+ component architecture.
+[ngoy](https://github.com/krizzdewizz/ngoy) is a template engine for the JVM, based on the Angular component architecture.
 
 As a proof of concept, the complete "Tour of Heroes" tutorial was rewritten using ngoy.
 
