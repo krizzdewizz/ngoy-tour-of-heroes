@@ -15,7 +15,7 @@
     <span class="error" *ngIf="error != null">{{error}}</span>
     
 	<nav>
-	 	<a [class.active]="router.isActive(route)" *ngFor="let route of mainRoutes" [routerLink]="'/' + route.getPath()">{{route.getPath() | capitalize }}</a>
+	 	<a [class.active]="router.isActive(route)" *ngFor="let route of mainRoutes" [routerLink]="'/' + route.path">{{route.path | capitalize }}</a>
 	</nav>
 	<router-outlet></router-outlet>
 	<app-messages></app-messages>
