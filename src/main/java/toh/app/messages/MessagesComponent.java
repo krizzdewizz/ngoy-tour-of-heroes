@@ -9,4 +9,8 @@ public class MessagesComponent {
 
 	@Inject
 	public MessageService messageService;
+
+	public boolean isMessages() {
+		return !messageService.messages.isEmpty();
+	}
 }
