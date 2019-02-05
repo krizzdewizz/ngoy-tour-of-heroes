@@ -49,14 +49,14 @@ public class AppComponent implements OnInit, OnDestroy {
 	public MessageService messageService;
 
 	@Override
-	public void ngOnInit() {
+	public void onInit() {
 		redirectUrl = format("redirect:%s", location.getPath());
 		mainRoutes = router.getRoutes()
 				.subList(0, 2);
 	}
 
 	@Override
-	public void ngOnDestroy() {
+	public void onDestroy() {
 		saved = false;
 		error = null;
 	}

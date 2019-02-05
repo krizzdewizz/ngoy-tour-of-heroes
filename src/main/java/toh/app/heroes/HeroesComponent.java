@@ -22,7 +22,7 @@ public class HeroesComponent implements OnInit {
 	public AppState appState;
 
 	@Override
-	public void ngOnInit() {
+	public void onInit() {
 		heroes = heroService.getHeroes();
 		selectedHero = appState.selectedHeroId != null ? heroService.findById(appState.selectedHeroId)
 				.orElse(null) : null;

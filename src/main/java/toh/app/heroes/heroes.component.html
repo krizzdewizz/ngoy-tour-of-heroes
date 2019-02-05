@@ -1,6 +1,6 @@
 <ul class="heroes">
 	<li *ngFor="let hero of heroes">
-		<button title="Select" class="select-hero" [(click)]="List('selectHero', Map('heroId', hero.id ))">{{ hero == selectedHero ? 'X' : '' }}
+		<button title="Select" class="select-hero" [(click)]="$list('selectHero', $map('heroId', hero.id))">{{ hero == selectedHero ? 'X' : '' }}
 		</button>
 		<a [routerLink]="'detail/' + hero.id"> <span class="badge">{{hero.id}}</span> {{hero.name}}
 	</a>

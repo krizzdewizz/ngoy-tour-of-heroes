@@ -17,7 +17,7 @@ public class DashboardComponent implements OnInit {
 	public HeroService heroService;
 
 	@Override
-	public void ngOnInit() {
+	public void onInit() {
 		heroes = heroService.getHeroes()
 				.subList(1, 5);
 	}

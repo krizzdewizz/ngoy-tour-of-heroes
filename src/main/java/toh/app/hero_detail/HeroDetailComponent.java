@@ -27,7 +27,7 @@ public class HeroDetailComponent implements OnInit {
 	public HeroService heroService;
 
 	@Override
-	public void ngOnInit() {
+	public void onInit() {
 		if (hero == null) {
 			long heroId = Long.parseLong(routeParams.get("id"));
 			hero = heroService.findById(heroId)
